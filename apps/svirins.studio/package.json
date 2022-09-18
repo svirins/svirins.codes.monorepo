@@ -1,0 +1,35 @@
+{
+  "name": "svirins-studio-v3",
+  "private": true,
+  "version": "1.0.0",
+  "main": "package.json",
+  "license": "UNLICENSED",
+  "author": "Dzmitry Sviryn <svirins@gmail.com>",
+  "scripts": {
+    "start": "sanity start",
+    "build": "sanity build",
+    "deploy": "sanity deploy",
+    "deploy-graphql": "sanity graphql deploy",
+    "prettier": "prettier --check . --ignore-path ../../.prettierignore",
+    "test": "pnpm prettier && pnpm eslint && pnpm ts",
+    "ts": "tsc"
+  },
+  "keywords": [
+    "sanity"
+  ],
+  "dependencies": {
+    "@sanity/vision": "3.0.0-dev-preview.17",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "react-is": "^17.0.0",
+    "sanity": "dev-preview",
+    "sanity-plugin-markdown": "3.0.0-v3-studio.2",
+    "styled-components": "^5.2.0"
+  },
+  "devDependencies": {
+    "@sanity/eslint-config-studio": "^2.0.0",
+    "eslint": "^8.6.0",
+    "config": "workspace:*",
+    "tsconfig": "*"
+  }
+}

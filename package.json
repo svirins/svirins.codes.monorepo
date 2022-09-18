@@ -4,19 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-   {
-      "scripts": {
-        "build": "turbo run build",
-        "test": "turbo run test",
-        "lint": "turbo run lint",
-        "dev": "turbo run dev"
-      }
+    "scripts": {
+      "build": "turbo run build",
+      "lint": "turbo run lint",
+      "dev": "turbo run dev --parallel",
+      "format": "prettier --write \"**/*.{ts,tsx,md}\""
     }
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "turbo": "^1.4.7"
-  }
+    "turbo": "^1.4.7",
+    "prettier": "^2.7.1"
+  },
+  "packageManager": "pnpm@7.11.0"
 }

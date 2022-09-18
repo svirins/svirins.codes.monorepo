@@ -1,0 +1,10 @@
+*.log
+.DS_Store
+.next
+node_modules
+.vercel
+.env.local
+.env.development
+.env
+.sanity
+out

@@ -1,3 +1,28 @@
 {
-  "$schema": "https://turborepo.org/schema.json"
+  "npmClient": "pnpm",
+  "$schema": "https://turborepo.org/schema.json",
+  "pipeline": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", ".next/**"]
+    },
+    "svirins.codes#build": {
+      "dependsOn": [
+        "^build",
+        "$NEXT_PUBLIC_SANITY_DATASET",
+        "$NEXT_PUBLIC_SANITY_PROJECT_ID"
+      ],
+      "outputs": [".next/**"]
+    },
+    "svirins.studio#build": {
+      "dependsOn": ["^build"],
+      "outputs": ["public/**"]
+    },
+    "lint": {
+      "outputs": []
+    },
+    "dev": {
+      "cache": false
+    }
+  }
 }
