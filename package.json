@@ -2,21 +2,31 @@
   "name": "svirins-turborepo",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+    "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
-    "scripts": {
-      "build": "turbo run build",
-      "lint": "turbo run lint",
-      "dev": "turbo run dev --parallel",
-      "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "dev": "turbo run dev --parallel",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
+  "husky": {
+    "hooks": {
+    "pre-commit": "lint-staged"
     }
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
     "turbo": "^1.4.7",
-    "prettier": "^2.7.1"
+    "prettier": "^2.7.1",
+    "lint-staged": "^13.0.3",
+    "husky": "^8.0.1"
   },
   "packageManager": "pnpm@7.11.0"
 }
