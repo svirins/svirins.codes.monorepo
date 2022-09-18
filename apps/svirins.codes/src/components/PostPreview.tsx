@@ -1,13 +1,13 @@
-import Link from 'next/link';
+import Link from "next/link";
 
-import { Tags } from '@/components/Tags';
-import { IPost } from '@/typings';
+import { Tags } from "@/components/Tags";
+import { IPost } from "@/typings";
 
 export default function PostPreview({
   slug,
   title,
   excerpt,
-  tags
+  tags,
 }: Partial<IPost>) {
   return (
     <Link href={`/blog/${slug}`}>

@@ -1,7 +1,7 @@
-import fetcher from 'src/lib/fetcher';
-import useSWR from 'swr';
+import fetcher from "src/lib/fetcher";
+import useSWR from "swr";
 
-import { ICurrentlyPlaying } from '@/typings';
+import { ICurrentlyPlaying } from "@/typings";
 
 function AnimatedBars() {
   return (
@@ -31,7 +31,7 @@ function AnimatedBars() {
 }
 
 export default function NowPlaying() {
-  const { data } = useSWR<ICurrentlyPlaying>('/api/now-playing', fetcher);
+  const { data } = useSWR<ICurrentlyPlaying>("/api/now-playing", fetcher);
   return (
     <div className="flex flex-row-reverse items-center sm:flex-row mb-8 space-x-0 sm:space-x-2 w-full">
       {data?.songUrl ? (
@@ -60,10 +60,10 @@ export default function NowPlaying() {
           </p>
         )}
         <span className="capsize mx-2 text-gray-500 dark:text-gray-400 hidden sm:block">
-          {' – '}
+          {" – "}
         </span>
         <p className="capsize text-gray-500 dark:text-gray-400 max-w-max truncate text-sm">
-          {data?.artist ?? 'Spotify'}
+          {data?.artist ?? "Spotify"}
         </p>
       </div>
     </div>

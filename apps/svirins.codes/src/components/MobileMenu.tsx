@@ -1,12 +1,12 @@
-import cn from 'classnames';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import cn from "classnames";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
-import { NAV_LINKS } from '@/config';
-import useDelayedRender from '@/lib/use-delayed-render';
-import { getActiveStatus } from '@/lib/utils';
-import styles from '@/styles/mobile-menu.module.css';
+import { NAV_LINKS } from "@/config";
+import useDelayedRender from "@/lib/use-delayed-render";
+import { getActiveStatus } from "@/lib/utils";
+import styles from "@/styles/mobile-menu.module.css";
 
 export default function MobileMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,7 +14,7 @@ export default function MobileMenu() {
     isMenuOpen,
     {
       enterDelay: 20,
-      exitDelay: 300
+      exitDelay: 300,
     }
   );
   const router = useRouter();
@@ -22,23 +22,23 @@ export default function MobileMenu() {
   function toggleMenu() {
     if (isMenuOpen) {
       setIsMenuOpen(false);
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     } else {
       setIsMenuOpen(true);
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     }
   }
 
   useEffect(() => {
     return function cleanup() {
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     };
   }, []);
 
   return (
     <>
       <button
-        className={cn(styles.burger, 'visible md:hidden')}
+        className={cn(styles.burger, "visible md:hidden")}
         aria-label="Toggle menu"
         type="button"
         onClick={toggleMenu}
@@ -50,7 +50,7 @@ export default function MobileMenu() {
         <ul
           className={cn(
             styles.menu,
-            'flex flex-col absolute bg-gray-50 dark:bg-gray-900',
+            "flex flex-col absolute bg-gray-50 dark:bg-gray-900",
             isMenuRendered && styles.menuRendered
           )}
         >
@@ -58,15 +58,15 @@ export default function MobileMenu() {
             <li
               key={index}
               className="border-b border-gray-500/50 text-gray-600 dark:text-gray-400 dark:border-gray-500/50"
-              style={{ transitionDelay: '150ms' }}
+              style={{ transitionDelay: "150ms" }}
             >
               <Link href={item.href}>
                 <a
                   className={cn(
                     getActiveStatus(item.href, router.asPath)
-                      ? 'font-medium text-gray-800 dark:text-gray-200'
-                      : '',
-                    'transition-all  duration-150 hover:text-gray-800 dark:hover:text-gray-200 ease-in-out text-lg'
+                      ? "font-medium text-gray-800 dark:text-gray-200"
+                      : "",
+                    "transition-all  duration-150 hover:text-gray-800 dark:hover:text-gray-200 ease-in-out text-lg"
                   )}
                 >
                   {item.text}
@@ -80,7 +80,7 @@ export default function MobileMenu() {
   );
 }
 
-function MenuIcon(props: JSX.IntrinsicElements['svg']) {
+function MenuIcon(props: JSX.IntrinsicElements["svg"]) {
   return (
     <svg
       className="h-5 w-5 absolute text-gray-800 dark:text-gray-200 hover:text-gray-900 dark:hover:text-gray-100"
@@ -101,7 +101,7 @@ function MenuIcon(props: JSX.IntrinsicElements['svg']) {
   );
 }
 
-function CrossIcon(props: JSX.IntrinsicElements['svg']) {
+function CrossIcon(props: JSX.IntrinsicElements["svg"]) {
   return (
     <svg
       className="h-5 w-5 absolute text-gray-900 dark:text-gray-100"

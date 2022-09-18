@@ -1,7 +1,7 @@
-import { IconContext } from 'react-icons';
+import { IconContext } from "react-icons";
 
-import NowPlaying from '@/components/NowPlaying';
-import { SOCIALS } from '@/components/StackIcon';
+import NowPlaying from "@/components/NowPlaying";
+import { SOCIALS } from "@/components/StackIcon";
 
 export default function Footer() {
   return (
@@ -12,7 +12,7 @@ export default function Footer() {
         <IconContext.Provider
           value={{
             className:
-              'w-4 h-4 fill-gray-700  dark:fill-gray-400  hover:fill-gray-800 dark:hover:fill-gray-200'
+              "w-4 h-4 fill-gray-700  dark:fill-gray-400  hover:fill-gray-800 dark:hover:fill-gray-200",
           }}
         >
           {SOCIALS.map((social, index) => (

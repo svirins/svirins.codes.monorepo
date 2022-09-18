@@ -1,7 +1,7 @@
-import { useEffect, useRef } from 'react';
-import Typed from 'typed.js';
+import { useEffect, useRef } from "react";
+import Typed from "typed.js";
 
-import { TYPED_STRINGS } from '@/config';
+import { TYPED_STRINGS } from "@/config";
 
 const TypewriterEffect = () => {
   const el = useRef<HTMLSpanElement>(null!);
@@ -15,7 +15,7 @@ const TypewriterEffect = () => {
       smartBackspace: true,
       loop: true,
       showCursor: true,
-      cursorChar: '|'
+      cursorChar: "|",
     });
     // Destropying
     return () => {

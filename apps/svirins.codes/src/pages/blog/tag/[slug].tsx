@@ -1,11 +1,11 @@
-import Container from '@/components/Container';
-import PostPreview from '@/components/PostPreview';
-import { getPostsByTag, getTagSlugs } from '@/lib/sanity-api';
-import { IParams, IPost } from '@/typings';
+import Container from "@/components/Container";
+import PostPreview from "@/components/PostPreview";
+import { getPostsByTag, getTagSlugs } from "@/lib/sanity-api";
+import { IParams, IPost } from "@/typings";
 
 export default function TagPage({
   posts,
-  title
+  title,
 }: {
   posts: IPost[];
   title: string;
@@ -45,7 +45,7 @@ export async function getStaticPaths() {
   const paths = await getTagSlugs();
   return {
     paths: paths.map((slug) => ({ params: { slug: slug } })),
-    fallback: 'blocking'
+    fallback: "blocking",
   };
 }
 

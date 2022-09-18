@@ -1,5 +1,5 @@
-import { useTheme } from 'next-themes';
-import { useEffect, useState } from 'react';
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 export default function ToggleMode() {
   const [mounted, setMounted] = useState(false);
@@ -10,7 +10,7 @@ export default function ToggleMode() {
       aria-label="Toggle Dark Mode"
       type="button"
       className="w-6 h-9 flex items-center justify-center"
-      onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
+      onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
     >
       {mounted && (
         <svg
@@ -20,7 +20,7 @@ export default function ToggleMode() {
           stroke="currentColor"
           className="w-6 h-6 text-gray-800 dark:text-gray-200 transition-all hover:scale-110 duration-150 ease-in-out"
         >
-          {theme === 'dark' || resolvedTheme === 'dark' ? (
+          {theme === "dark" || resolvedTheme === "dark" ? (
             <path
               strokeLinecap="round"
               strokeLinejoin="round"

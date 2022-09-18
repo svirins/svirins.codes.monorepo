@@ -8,7 +8,7 @@ export const schemaTypes = [
         name: 'title',
         title: 'Title',
         type: 'string',
-        validation: (Rule: {required: () => any}) => Rule.required(),
+        validation: (Rule: { required: () => any }) => Rule.required(),
       },
       {
         name: 'slug',
@@ -17,7 +17,7 @@ export const schemaTypes = [
         options: {
           source: 'title',
         },
-        validation: (Rule: {required: () => any}) => Rule.required(),
+        validation: (Rule: { required: () => any }) => Rule.required(),
       },
       {
         name: 'content',
@@ -28,7 +28,7 @@ export const schemaTypes = [
         name: 'excerpt',
         title: 'Excerpt',
         type: 'string',
-        validation: (Rule: {required: () => any}) => Rule.required(),
+        validation: (Rule: { required: () => any }) => Rule.required(),
       },
       {
         name: 'coverImage',
@@ -49,7 +49,7 @@ export const schemaTypes = [
             ],
           },
         ],
-        validation: (Rule: {required: () => any}) => Rule.required(),
+        validation: (Rule: { required: () => any }) => Rule.required(),
       },
     ],
   },
@@ -62,7 +62,7 @@ export const schemaTypes = [
         name: 'title',
         title: 'Title',
         type: 'string',
-        validation: (Rule: {required: () => any}) => Rule.required(),
+        validation: (Rule: { required: () => any }) => Rule.required(),
       },
       {
         name: 'slug',
@@ -71,7 +71,7 @@ export const schemaTypes = [
         options: {
           source: 'title',
         },
-        validation: (Rule: {required: () => any}) => Rule.required(),
+        validation: (Rule: { required: () => any }) => Rule.required(),
       },
       {
         name: 'content',
@@ -82,13 +82,13 @@ export const schemaTypes = [
         name: 'description',
         title: 'Description',
         type: 'string',
-        validation: (Rule: {required: () => any}) => Rule.required(),
+        validation: (Rule: { required: () => any }) => Rule.required(),
       },
       {
         name: 'iconTitle',
         title: 'Icon Title',
         type: 'string',
-        validation: (Rule: {required: () => any}) => Rule.required(),
+        validation: (Rule: { required: () => any }) => Rule.required(),
       },
     ],
   },
@@ -101,7 +101,7 @@ export const schemaTypes = [
         name: 'title',
         title: 'Title',
         type: 'string',
-        validation: (Rule: {required: () => any}) => Rule.required(),
+        validation: (Rule: { required: () => any }) => Rule.required(),
       },
       {
         name: 'slug',
@@ -110,8 +110,8 @@ export const schemaTypes = [
         options: {
           source: 'title',
         },
-        validation: (Rule: {required: () => any}) => Rule.required(),
+        validation: (Rule: { required: () => any }) => Rule.required(),
       },
     ],
   },
-]
+];

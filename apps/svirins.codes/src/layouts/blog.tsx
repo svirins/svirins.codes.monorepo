@@ -1,15 +1,15 @@
-import Image from 'next/future/image';
-import { PropsWithChildren, Suspense } from 'react';
+import Image from "next/future/image";
+import { PropsWithChildren, Suspense } from "react";
 
-import Container from '@/components/Container';
-import BlurredImage from '@/components/Image';
-import { Tags } from '@/components/Tags';
-import { urlForImage } from '@/lib/sanity-client';
-import { IPost } from '@/typings';
+import Container from "@/components/Container";
+import BlurredImage from "@/components/Image";
+import { Tags } from "@/components/Tags";
+import { urlForImage } from "@/lib/sanity-client";
+import { IPost } from "@/typings";
 
 export default function BlogLayout({
   children,
-  post
+  post,
 }: PropsWithChildren<{ post: IPost }>) {
   return (
     <Container
@@ -50,10 +50,10 @@ export default function BlogLayout({
                 Dzmitry Svirin
               </a>
               {` • `}
-              {new Intl.DateTimeFormat('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
+              {new Intl.DateTimeFormat("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
               }).format(new Date(post.date))}
             </p>
           </div>

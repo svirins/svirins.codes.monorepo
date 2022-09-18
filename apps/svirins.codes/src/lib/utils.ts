@@ -3,12 +3,12 @@ export function getActiveStatus(href: string, currentPath: string): boolean {
     return true;
   }
   if (
-    href.search('blog') > 0 &&
-    (currentPath.search('blog') > 0 || currentPath.search('tag') > 0)
+    href.search("blog") > 0 &&
+    (currentPath.search("blog") > 0 || currentPath.search("tag") > 0)
   ) {
     return true;
   }
-  if (href.search('snippets') > 0 && currentPath.search('snippets') > 0) {
+  if (href.search("snippets") > 0 && currentPath.search("snippets") > 0) {
     return true;
   }
 

@@ -1,6 +1,6 @@
 // import { MDXRemoteSerializeResult } from 'next-mdx-remote';
-import { MDXRemoteSerializeResult } from 'next-mdx-remote';
-import { ParsedUrlQuery } from 'querystring';
+import { MDXRemoteSerializeResult } from "next-mdx-remote";
+import { ParsedUrlQuery } from "querystring";
 
 export interface ITag {
   _id: string;

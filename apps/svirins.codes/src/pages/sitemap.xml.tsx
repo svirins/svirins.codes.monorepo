@@ -1,6 +1,6 @@
-import { type ServerResponse } from 'http';
+import { type ServerResponse } from "http";
 
-import { getPostSlugs } from '@/lib/sanity-api';
+import { getPostSlugs } from "@/lib/sanity-api";
 
 /**
  * todo: add dedicated tag pages for each tag
@@ -18,26 +18,26 @@ const createSitemap = (
                 </url>
             `;
           })
-          .join('')}
+          .join("")}
     </urlset>
 `;
 export async function getServerSideProps({ res }: { res: ServerResponse }) {
   const allPosts = await getPostSlugs();
   const allPages = [
     ...allPosts.map((slug) => `blog/${slug}`),
-    ...['', 'blog', 'snippets']
+    ...["", "blog", "snippets"],
   ];
 
-  res.setHeader('Content-Type', 'text/xml');
+  res.setHeader("Content-Type", "text/xml");
   res.setHeader(
-    'Cache-Control',
-    'public, s-maxage=1200, stale-while-revalidate=600'
+    "Cache-Control",
+    "public, s-maxage=1200, stale-while-revalidate=600"
   );
   res.write(createSitemap(allPages));
   res.end();
 
   return {
-    props: {}
+    props: {},
   };
 }
 

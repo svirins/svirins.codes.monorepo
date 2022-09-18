@@ -1,13 +1,13 @@
-import type { PropsWithChildren } from 'react';
-import { IconContext } from 'react-icons';
+import type { PropsWithChildren } from "react";
+import { IconContext } from "react-icons";
 
-import Container from '@/components/Container';
-import StackIcon from '@/components/StackIcon';
-import { ISnippet } from '@/typings';
+import Container from "@/components/Container";
+import StackIcon from "@/components/StackIcon";
+import { ISnippet } from "@/typings";
 
 export default function SnippetLayout({
   children,
-  snippet
+  snippet,
 }: PropsWithChildren<{ snippet: ISnippet }>) {
   return (
     <Container
@@ -27,7 +27,7 @@ export default function SnippetLayout({
           <div className="mt-2 md:mt-6 scale-125 md:scale-150 ml-4 origin-center">
             <IconContext.Provider
               value={{
-                className: 'w-9 h-9 fill-gray-900  dark:fill-gray-100'
+                className: "w-9 h-9 fill-gray-900  dark:fill-gray-100",
               }}
             >
               <StackIcon iconTitle={snippet.iconTitle!} />

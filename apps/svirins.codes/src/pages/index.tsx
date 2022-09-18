@@ -1,25 +1,25 @@
-import dynamic from 'next/dynamic';
-import Image from 'next/future/image';
-import { useMemo } from 'react';
-import { Suspense } from 'react';
-import { IconContext } from 'react-icons';
+import dynamic from "next/dynamic";
+import Image from "next/future/image";
+import { useMemo } from "react";
+import { Suspense } from "react";
+import { IconContext } from "react-icons";
 
-import Container from '@/components/Container';
-import LoadingSpinner from '@/components/LoadingSpinner';
-import StackIcon, { STACKS } from '@/components/StackIcon';
-import TypewriterEffect from '@/components/TypewriterEffect';
-import { getWakaStats } from '@/lib/waka-api';
-import { IWakaApiResponse } from '@/typings';
+import Container from "@/components/Container";
+import LoadingSpinner from "@/components/LoadingSpinner";
+import StackIcon, { STACKS } from "@/components/StackIcon";
+import TypewriterEffect from "@/components/TypewriterEffect";
+import { getWakaStats } from "@/lib/waka-api";
+import { IWakaApiResponse } from "@/typings";
 
 export default function IndexPage({
   languages,
-  totalHours
+  totalHours,
 }: {
   languages: IWakaApiResponse[];
   totalHours: number;
 }) {
   const memoizedStacks = useMemo(() => STACKS.filter((el) => el.featured), []);
-  const DynamicWakaStats = dynamic(() => import('@/components/WakaStats'));
+  const DynamicWakaStats = dynamic(() => import("@/components/WakaStats"));
   return (
     <Container title="About me page | Dzmitry Svirin - svirins.codes">
       <div className="flex flex-col  max-w-2xl mx-auto w-full">
@@ -31,7 +31,7 @@ export default function IndexPage({
                   Hi, I&apos;am <span className="text-active">Dzmitry</span>
                 </h1>
                 <h2 className="text-[22px] md:text-2xl tracking-tight text-gray-900 dark:text-gray-100 font-normal">
-                  I specialize in turning ideas into{' '}
+                  I specialize in turning ideas into{" "}
                   <span className="font-semibold italic">real life </span>
                   products.
                 </h2>
@@ -74,10 +74,10 @@ export default function IndexPage({
               opportunities;
             </li>
             <li className="text-gray-700 dark:text-gray-400 md:text-lg">
-              I live in Batumi{' '}
+              I live in Batumi{" "}
               <span role="image" aria-label="georgia flag">
                 🌊🔆🇬🇪
-              </span>{' '}
+              </span>{" "}
               and enjoy swimming, mountains and good movies;
             </li>
           </ul>
@@ -106,7 +106,7 @@ export default function IndexPage({
             <IconContext.Provider
               value={{
                 className:
-                  'w-7 h-7 md:w-8 md:h-8  fill-gray-700  dark:fill-gray-300  hover:fill-gray-800 dark:hover:fill-gray-200'
+                  "w-7 h-7 md:w-8 md:h-8  fill-gray-700  dark:fill-gray-300  hover:fill-gray-800 dark:hover:fill-gray-200",
               }}
             >
               {memoizedStacks.map((el, index) => (
@@ -125,7 +125,7 @@ export default function IndexPage({
           </h2>
           <ul className="list-inside  list-[square] pt-2 pb-6 [&>*]:py-[0.1rem]">
             <li className="text-gray-700 dark:text-gray-400 md:text-lg">
-              Twitter:{' '}
+              Twitter:{" "}
               <a
                 className=" text-gray-800 dark:text-gray-300  font-medium link-underline link-underline-gradient"
                 href="https://twitter.com/svirins"
@@ -134,7 +134,7 @@ export default function IndexPage({
               </a>
             </li>
             <li className="text-gray-700 dark:text-gray-400 md:text-lg">
-              GitHub:{' '}
+              GitHub:{" "}
               <a
                 className=" text-gray-800 dark:text-gray-300  font-medium link-underline link-underline-gradient"
                 href="https://github.com/svirins"
@@ -143,7 +143,7 @@ export default function IndexPage({
               </a>
             </li>
             <li className="text-gray-700 dark:text-gray-400 md:text-lg">
-              Mail:{' '}
+              Mail:{" "}
               <a
                 className=" text-gray-800 dark:text-gray-300  font-medium  link-underline link-underline-gradient"
                 href="mailto:svirins@gmail.com"

@@ -1,7 +1,7 @@
-import {createConfig} from 'sanity'
-import {deskTool} from 'sanity/desk'
-import {schemaTypes} from './schemas'
-import {markdownSchema} from 'sanity-plugin-markdown'
+import { createConfig } from 'sanity';
+import { deskTool } from 'sanity/desk';
+import { schemaTypes } from './schemas';
+import { markdownSchema } from 'sanity-plugin-markdown';
 
 export default createConfig({
   name: 'default',
@@ -15,4 +15,4 @@ export default createConfig({
   schema: {
     types: schemaTypes,
   },
-})
+});

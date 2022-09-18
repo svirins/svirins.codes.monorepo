@@ -1,10 +1,10 @@
-import { MDXRemote } from 'next-mdx-remote';
+import { MDXRemote } from "next-mdx-remote";
 
-import components from '@/components/MDXComponents';
-import BlogLayout from '@/layouts/blog';
-import { mdxToHtml } from '@/lib/mdx';
-import { getPost, getPostSlugs } from '@/lib/sanity-api';
-import { IParams, IPost } from '@/typings';
+import components from "@/components/MDXComponents";
+import BlogLayout from "@/layouts/blog";
+import { mdxToHtml } from "@/lib/mdx";
+import { getPost, getPostSlugs } from "@/lib/sanity-api";
+import { IParams, IPost } from "@/typings";
 
 export default function PostPage({ post }: { post: IPost }) {
   return (
@@ -13,7 +13,7 @@ export default function PostPage({ post }: { post: IPost }) {
         {...post.mdxContent!}
         components={
           {
-            ...components
+            ...components,
           } as any
         }
       />
@@ -25,7 +25,7 @@ export async function getStaticPaths() {
   const paths = await getPostSlugs();
   return {
     paths: paths.map((slug) => ({ params: { slug } })),
-    fallback: 'blocking'
+    fallback: "blocking",
   };
 }
 
@@ -43,8 +43,8 @@ export async function getStaticProps({ params }: { params: IParams }) {
       post: {
         ...post,
         mdxContent: html,
-        readingTime
-      }
-    }
+        readingTime,
+      },
+    },
   };
 }

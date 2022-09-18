@@ -7,9 +7,10 @@
   "author": "Dzmitry Sviryn <svirins@gmail.com>",
   "scripts": {
     "start": "sanity start",
-    "build": "sanity build",
+    "build": "sanity build public -y",
+    "dev": "sanity start",
+    "eslint": "eslint --cache .",
     "deploy": "sanity deploy",
-    "deploy-graphql": "sanity graphql deploy",
     "prettier": "prettier --check . --ignore-path ../../.prettierignore",
     "test": "pnpm prettier && pnpm eslint && pnpm ts",
     "ts": "tsc"
@@ -28,6 +29,7 @@
   },
   "devDependencies": {
     "@sanity/eslint-config-studio": "^2.0.0",
+    "@sanity/cli": "^2.33.0",
     "eslint": "^8.6.0",
     "config": "workspace:*",
     "tsconfig": "*"

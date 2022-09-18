@@ -1,7 +1,7 @@
-import MobileMenu from '@/components/MobileMenu';
-import NavItem from '@/components/NavItem';
-import ToggleMode from '@/components/ToggleMode';
-import { NAV_LINKS } from '@/config';
+import MobileMenu from "@/components/MobileMenu";
+import NavItem from "@/components/NavItem";
+import ToggleMode from "@/components/ToggleMode";
+import { NAV_LINKS } from "@/config";
 
 export default function Header() {
   return (

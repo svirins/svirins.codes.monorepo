@@ -1,8 +1,8 @@
-import { getNowPlaying } from '@/lib/spotify-api';
-import { ICurrentlyPlaying } from '@/typings';
+import { getNowPlaying } from "@/lib/spotify-api";
+import { ICurrentlyPlaying } from "@/typings";
 
 export const config = {
-  runtime: 'experimental-edge'
+  runtime: "experimental-edge",
 };
 
 export default async function handler(): Promise<ICurrentlyPlaying | Response> {
@@ -12,8 +12,8 @@ export default async function handler(): Promise<ICurrentlyPlaying | Response> {
     return new Response(JSON.stringify({ isPlaying: false }), {
       status: 200,
       headers: {
-        'content-type': 'application/json'
-      }
+        "content-type": "application/json",
+      },
     });
   }
 
@@ -22,29 +22,29 @@ export default async function handler(): Promise<ICurrentlyPlaying | Response> {
     return new Response(JSON.stringify({ isPlaying: false }), {
       status: 200,
       headers: {
-        'content-type': 'application/json'
-      }
+        "content-type": "application/json",
+      },
     });
   }
 
   const title = song.item.name;
   const artist = song.item.artists
     .map((_artist: { name: string }) => _artist.name)
-    .join(', ');
+    .join(", ");
   const songUrl = song.item.external_urls.spotify;
   return new Response(
     JSON.stringify({
       artist,
       songUrl,
       title,
-      isPlaying: true
+      isPlaying: true,
     }),
     {
       status: 200,
       headers: {
-        'content-type': 'application/json',
-        'cache-control': 'public, s-maxage=60, stale-while-revalidate=30'
-      }
+        "content-type": "application/json",
+        "cache-control": "public, s-maxage=60, stale-while-revalidate=30",
+      },
     }
   );
 }

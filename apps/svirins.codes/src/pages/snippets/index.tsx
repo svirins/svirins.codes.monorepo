@@ -1,12 +1,12 @@
-import { InferGetStaticPropsType } from 'next';
-import { IconContext } from 'react-icons';
+import { InferGetStaticPropsType } from "next";
+import { IconContext } from "react-icons";
 
-import Container from '@/components/Container';
-import SnippetPreview from '@/components/SnippetPreview';
-import { getSnippets } from '@/lib/sanity-api';
+import Container from "@/components/Container";
+import SnippetPreview from "@/components/SnippetPreview";
+import { getSnippets } from "@/lib/sanity-api";
 
 export default function Snippets({
-  snippets
+  snippets,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Container
@@ -18,10 +18,10 @@ export default function Snippets({
           Code Snippets
         </h1>
         <p className="text-gray-900 font-semibold dark:text-gray-100 text-base md:text-lg mb-4 mt-2">
-          Some{' '}
+          Some{" "}
           <span role="image" aria-label="random">
             🎲
-          </span>{' '}
+          </span>{" "}
           stuff I&apos;ve found useful and want to share.
         </p>
 
@@ -29,7 +29,7 @@ export default function Snippets({
           <IconContext.Provider
             value={{
               className:
-                'w-7 h-7 md:w-8 md:h-8 fill-gray-900  dark:fill-gray-100'
+                "w-7 h-7 md:w-8 md:h-8 fill-gray-900  dark:fill-gray-100",
             }}
           >
             {snippets?.length &&

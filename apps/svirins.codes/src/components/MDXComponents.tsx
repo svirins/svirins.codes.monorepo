@@ -1,5 +1,5 @@
-import Image from '@/components/Image';
-import { Spotify, YouTube } from 'mdx-embed';
+import Image from "@/components/Image";
+import { Spotify, YouTube } from "mdx-embed";
 
 const Underlined = ({ title, href }: { title: string; href: string }) => {
   return (
@@ -17,7 +17,7 @@ const MDXComponents = {
   img: Image,
   Underlined,
   Spotify,
-  YouTube
+  YouTube,
 };
 
 export default MDXComponents;

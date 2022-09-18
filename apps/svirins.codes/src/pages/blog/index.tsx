@@ -1,14 +1,14 @@
-import { InferGetStaticPropsType } from 'next';
-import { useState } from 'react';
+import { InferGetStaticPropsType } from "next";
+import { useState } from "react";
 
-import Container from '@/components/Container';
-import PostPreview from '@/components/PostPreview';
-import { getPosts } from '@/lib/sanity-api';
+import Container from "@/components/Container";
+import PostPreview from "@/components/PostPreview";
+import { getPosts } from "@/lib/sanity-api";
 
 export default function Blog({
-  posts
+  posts,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  const [searchValue, setSearchValue] = useState('');
+  const [searchValue, setSearchValue] = useState("");
   const filteredBlogPosts = posts.filter((post) =>
     post.title.toLowerCase().includes(searchValue.toLowerCase())
   );
@@ -23,10 +23,10 @@ export default function Blog({
             Blog
           </h1>
           <p className="text-gray-900 font-semibold  dark:text-gray-100 text-base mt-2 md:text-lg">
-            Posts about code, dev life and various{' '}
+            Posts about code, dev life and various{" "}
             <span role="image" aria-label="technomagical">
               ⚗️
-            </span>{' '}
+            </span>{" "}
             things.
           </p>
         </div>

@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useRef, useState } from "react";
 
 interface Options {
   enterDelay?: number;
@@ -64,7 +64,7 @@ const useDelayedRender = (active = false, options: Options = {}) => {
 
   return {
     mounted: mounted.current,
-    rendered: rendered.current
+    rendered: rendered.current,
   };
 };
 

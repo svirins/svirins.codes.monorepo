@@ -1,17 +1,17 @@
-import { MDXRemote } from 'next-mdx-remote';
-import { IconContext } from 'react-icons';
-import SnippetLayout from 'src/layouts/snippets';
+import { MDXRemote } from "next-mdx-remote";
+import { IconContext } from "react-icons";
+import SnippetLayout from "src/layouts/snippets";
 
-import components from '@/components/MDXComponents';
-import { mdxToHtml } from '@/lib/mdx';
-import { getSnippet, getSnippetSlugs } from '@/lib/sanity-api';
-import { IParams, ISnippet } from '@/typings';
+import components from "@/components/MDXComponents";
+import { mdxToHtml } from "@/lib/mdx";
+import { getSnippet, getSnippetSlugs } from "@/lib/sanity-api";
+import { IParams, ISnippet } from "@/typings";
 
 export default function SnippetsPage({ snippet }: { snippet: ISnippet }) {
   return (
     <IconContext.Provider
       value={{
-        className: 'w-7 h-7 md:w-8 md:h-8 fill-gray-900  dark:fill-gray-100'
+        className: "w-7 h-7 md:w-8 md:h-8 fill-gray-900  dark:fill-gray-100",
       }}
     >
       <SnippetLayout snippet={snippet}>
@@ -19,7 +19,7 @@ export default function SnippetsPage({ snippet }: { snippet: ISnippet }) {
           {...snippet.mdxContent!}
           components={
             {
-              ...components
+              ...components,
             } as any
           }
         />
@@ -32,7 +32,7 @@ export async function getStaticPaths() {
   const paths = await getSnippetSlugs();
   return {
     paths: paths.map((slug) => ({ params: { slug } })),
-    fallback: 'blocking'
+    fallback: "blocking",
   };
 }
 
@@ -49,8 +49,8 @@ export async function getStaticProps({ params }: { params: IParams }) {
     props: {
       snippet: {
         ...snippet,
-        mdxContent: html
-      }
-    }
+        mdxContent: html,
+      },
+    },
   };
 }
