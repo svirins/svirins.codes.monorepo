@@ -2,7 +2,7 @@
   "name": "svirins-turborepo",
   "version": "1.0.0",
   "description": "",
-    "workspaces": [
+  "workspaces": [
     "apps/*",
     "packages/*"
   ],
@@ -10,11 +10,12 @@
     "build": "turbo run build",
     "lint": "turbo run lint",
     "dev": "turbo run dev --parallel",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "prepare": "husky install"
   },
   "husky": {
     "hooks": {
-    "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged"
     }
   },
   "keywords": [],

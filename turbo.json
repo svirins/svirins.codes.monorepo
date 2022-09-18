@@ -8,9 +8,7 @@
     },
     "svirins.codes#build": {
       "dependsOn": [
-        "^build",
-        "$NEXT_PUBLIC_SANITY_DATASET",
-        "$NEXT_PUBLIC_SANITY_PROJECT_ID"
+        "^build"
       ],
       "outputs": [".next/**"]
     },

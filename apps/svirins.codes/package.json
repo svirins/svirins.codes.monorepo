@@ -6,9 +6,8 @@
     "dev": "next dev",
     "start": "next start",
     "build-analyze": "ANALYZE=true pnpm run build ",
-    "lint": "next lint --dir layouts",
+    "lint": "next lint",
     "check-types": "tsc --noEmit --pretty",
-    "prepare": "husky install",
     "format": "prettier --write ."
   },
   "dependencies": {
