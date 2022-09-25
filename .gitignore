@@ -36,3 +36,4 @@ yarn-error.log*
 # Build and lint
 *.tsbuildinfo
 .eslintcache
+.vercel
