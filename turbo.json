@@ -7,9 +7,7 @@
       "outputs": ["dist/**", ".next/**"]
     },
     "svirins.codes#build": {
-      "dependsOn": [
-        "^build"
-      ],
+      "dependsOn": ["^build"],
       "outputs": [".next/**"]
     },
     "svirins.studio#build": {
